@@ -66,6 +66,7 @@ namespace PingboardApiClient
 
         /// <summary>
         /// Given an id, will delete the user matching it
+        /// Requires company_admin access
         /// </summary>
         public async Task DeleteUserAsync(int id)
         {
