@@ -67,10 +67,7 @@ namespace PingboardApiClient.Internal.Http
 
             await EnsureToken();
             var response = await PingboardPolicy.ExecuteAsync(async () => await _client.GetAsync(uri));
-            if (!IsSuccess(response))
-            {
-                throw new ArgumentNullException();
-            }
+            EnsureSuccess(response);
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<T>(content);
         }
@@ -86,10 +83,7 @@ namespace PingboardApiClient.Internal.Http
             var json = JsonConvert.SerializeObject(body);
             var data = new StringContent(json, System.Text.Encoding.Default, "application/json");
             var response = await PingboardPolicy.ExecuteAsync(async () => await _client.PostAsync(uri, data));
-            if (!IsSuccess(response))
-            {
-                throw new ArgumentNullException();
-            }
+            EnsureSuccess(response);
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<T>(content);
         }
@@ -106,10 +100,7 @@ namespace PingboardApiClient.Internal.Http
             var data = new StringContent(json, System.Text.Encoding.Default, "application/json");
             var request = new HttpRequestMessage {Method = new HttpMethod("PATCH"), RequestUri = uri, Content = data};
             var response = await PingboardPolicy.ExecuteAsync(async () => await _client.SendAsync(request));
-            if (!IsSuccess(response))
-            {
-                throw new ArgumentNullException();
-            }
+            EnsureSuccess(response);
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<T>(content);
         }
@@ -122,12 +113,16 @@ namespace PingboardApiClient.Internal.Http
             }
 
             await EnsureToken();
-            await PingboardPolicy.ExecuteAsync(async () => await _client.DeleteAsync(uri));
+            var response = await PingboardPolicy.ExecuteAsync(async () => await _client.DeleteAsync(uri));
+            EnsureSuccess(response);
         }
 
-        private static bool IsSuccess(HttpResponseMessage response)
+        private static void EnsureSuccess(HttpResponseMessage response)
         {
-            return response.IsSuccessStatusCode;
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException(response.StatusCode.ToString());
+            }
         }
     }
 }
