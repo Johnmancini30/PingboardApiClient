@@ -60,10 +60,7 @@ namespace PingboardApiClient.Internal.Http
 
         internal async Task<T> GetAsync<T>(string relativeUri)
         {
-            if (!Uri.TryCreate(_baseUri, relativeUri, out var uri))
-            {
-                throw new UriFormatException($"Unable to create uri with {_baseUri.ToString()} {relativeUri}");
-            }
+            var uri = EnsureUri(relativeUri);
 
             await EnsureToken();
             var response = await PingboardPolicy.ExecuteAsync(async () => await _client.GetAsync(uri));
@@ -74,10 +71,7 @@ namespace PingboardApiClient.Internal.Http
 
         internal async Task<T> PostAsync<T, U>(string relativeUri, U body)
         {
-            if (!Uri.TryCreate(_baseUri, relativeUri, out var uri))
-            {
-                throw new UriFormatException($"Unable to create uri with {_baseUri.ToString()} {relativeUri}");
-            }
+            var uri = EnsureUri(relativeUri);
 
             await EnsureToken();
             var json = JsonConvert.SerializeObject(body);
@@ -90,10 +84,7 @@ namespace PingboardApiClient.Internal.Http
 
         internal async Task<T> UpdateAsync<T, U>(string relativeUri, U body)
         {
-            if (!Uri.TryCreate(_baseUri, relativeUri, out var uri))
-            {
-                throw new UriFormatException($"Unable to create uri with {_baseUri.ToString()} {relativeUri}");
-            }
+            var uri = EnsureUri(relativeUri);
 
             await EnsureToken();
             var json = JsonConvert.SerializeObject(body);
@@ -107,10 +98,7 @@ namespace PingboardApiClient.Internal.Http
 
         internal async Task DeleteAsync(string relativeUri)
         {
-            if (!Uri.TryCreate(_baseUri, relativeUri, out var uri))
-            {
-                throw new UriFormatException($"Unable to create uri with {_baseUri.ToString()} {relativeUri}");
-            }
+            var uri = EnsureUri(relativeUri);
 
             await EnsureToken();
             var response = await PingboardPolicy.ExecuteAsync(async () => await _client.DeleteAsync(uri));
@@ -123,6 +111,15 @@ namespace PingboardApiClient.Internal.Http
             {
                 throw new HttpRequestException(response.StatusCode.ToString());
             }
+        }
+
+        private Uri EnsureUri(string relativeUri)
+        {
+            if (!Uri.TryCreate(_baseUri, relativeUri, out var uri))
+            {
+                throw new UriFormatException($"Unable to create uri with {_baseUri.ToString()} {relativeUri}");
+            }
+            return uri;
         }
     }
 }
