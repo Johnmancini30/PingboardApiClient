@@ -1,5 +1,8 @@
 ﻿namespace PingboardApiClient.Models.Users.Requests
 {
+    /// <summary>
+    /// Enum for possible User sort
+    /// </summary>
     public enum UsersSort
     {
         first_name = 0,

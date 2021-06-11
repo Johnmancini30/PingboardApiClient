@@ -4,6 +4,7 @@ namespace PingboardApiClient.Models.Users.Requests
 {
     /// <summary>
     /// Used to update a user
+    /// Must include firstName, lastName, email
     /// </summary>
     public class UpdateUserRequest
     {

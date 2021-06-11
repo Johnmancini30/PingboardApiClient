@@ -4,6 +4,7 @@ namespace PingboardApiClient.Models.Users.Requests
 {
     /// <summary>
     /// Used to create a user
+    /// Must include firstName, lastName, email
     /// </summary>
     public class CreateUserRequest
     {

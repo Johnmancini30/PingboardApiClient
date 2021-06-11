@@ -4,6 +4,9 @@ using Newtonsoft.Json;
 
 namespace PingboardApiClient.Models.Users.Requests
 {
+    /// <summary>
+    /// Represent a User object
+    /// </summary>
     public class User
     {
         [JsonProperty("id")]
@@ -25,7 +28,7 @@ namespace PingboardApiClient.Models.Users.Requests
         public string? NickName { get; set; }
         
         [JsonProperty("start_date")]
-        public string? StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
         
         [JsonProperty("time_zone")]
         public string? TimeZone { get; set; }
@@ -71,7 +74,5 @@ namespace PingboardApiClient.Models.Users.Requests
         
         [JsonProperty("phone_message_channel")]
         public bool PhoneMessageChannel { get; set; }
-
-        //TODO Links
     }
 }

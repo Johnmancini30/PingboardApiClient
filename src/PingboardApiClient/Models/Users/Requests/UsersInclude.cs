@@ -1,5 +1,8 @@
 ﻿namespace PingboardApiClient.Models.Users.Requests
 {
+    /// <summary>
+    /// Enum for possible includes
+    /// </summary>
     public enum UsersInclude
     {
         linked_accounts = 0,
