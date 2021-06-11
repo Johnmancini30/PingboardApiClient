@@ -9,7 +9,7 @@ using PingboardApiClient.Models.Users.Requests;
 namespace PingboardApiClient
 {
     /// <summary>
-    /// Used to hit the Users endpoint
+    /// Used to query Pingboard Api users
     /// </summary>
     public class UsersClient
     {
