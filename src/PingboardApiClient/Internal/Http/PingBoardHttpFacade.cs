@@ -22,13 +22,6 @@ namespace PingboardApiClient.Internal.Http
             .HandleTransientHttpError()
             .WaitAndRetryAsync(new[] {TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(4), TimeSpan.FromSeconds(8)});
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="baseUrl">Host address of Pingboard instance</param>
-        /// <param name="clientId">Client Id.</param>
-        /// <param name="clientSecret">Client Secret.</param>
-        /// <param name="client">Optional HttpClient</param>
         internal PingboardHttpFacade(string baseUrl, string clientId, string clientSecret, HttpClient? client = null)
         {
             _baseUri = new Uri(baseUrl);

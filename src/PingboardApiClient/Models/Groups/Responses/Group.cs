@@ -56,5 +56,14 @@ namespace PingboardApiClient.Models.Groups.Responses
 
         [JsonProperty("longitude")]
         public int? Longitude { get; set; }
+
+        [JsonProperty("links")]
+        public GroupsLinks? Links { get; set; }
+
+        public class GroupsLinks
+        {
+            [JsonProperty("users")]
+            public List<string>? Users { get; set; }
+        }
     }
 }
