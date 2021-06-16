@@ -1,7 +1,7 @@
 ﻿namespace PingboardApiClient.Models.Users.Requests
 {
     /// <summary>
-    /// Enum for possible includes
+    /// Enum for possible Users includes
     /// </summary>
     public enum UsersInclude
     {

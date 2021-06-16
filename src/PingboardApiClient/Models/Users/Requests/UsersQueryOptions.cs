@@ -50,7 +50,7 @@ namespace PingboardApiClient.Models.Users.Requests
         public string? LastName { get; set; }
         
         /// <summary>
-        /// 
+        /// Start Date to look for
         /// </summary>
         public DateTime? StartDate { get; set; }
         

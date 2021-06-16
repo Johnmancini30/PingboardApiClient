@@ -1,7 +1,7 @@
 ﻿namespace PingboardApiClient.Models.Users.Requests
 {
     /// <summary>
-    /// Enum for possible User sort
+    /// Enum for possible Users sort
     /// </summary>
     public enum UsersSort
     {
