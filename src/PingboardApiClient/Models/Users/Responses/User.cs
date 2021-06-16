@@ -72,6 +72,16 @@ namespace PingboardApiClient.Models.Users.Responses
         [JsonProperty("phone_message_channel")]
         public bool PhoneMessageChannel { get; set; }
 
-        //TODO Links
+        [JsonProperty("links")]
+        public UsersLinks? Links { get; set; }
+
+        public class UsersLinks
+        {
+            [JsonProperty("groups")]
+            public List<string>? Groups { get; set; }
+
+            [JsonProperty("linked_accounts")]
+            public List<string>? LinkedAccounts { get; set; }
+        }
     }
 }
