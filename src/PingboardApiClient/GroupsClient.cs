@@ -32,7 +32,7 @@ namespace PingboardApiClient
             var queryOptions = new GroupsQueryOptions();
             options?.Invoke(queryOptions);
 
-            string url = _queryBuilder.Build("api/v2/groups", queryOptions);
+            var url = _queryBuilder.Build("api/v2/groups", queryOptions);
             return await _httpFacade.GetAsync<Groups>(url);
         }
 
@@ -43,7 +43,7 @@ namespace PingboardApiClient
         {
             var queryOptions = new GroupsQueryOptions() { Includes = includes };
 
-            string url = _queryBuilder.Build($"api/v2/groups/{id}", queryOptions);
+            var url = _queryBuilder.Build($"api/v2/groups/{id}", queryOptions);
             return await _httpFacade.GetAsync<Groups>(url);
         }
 

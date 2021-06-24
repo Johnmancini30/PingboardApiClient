@@ -7,19 +7,19 @@ namespace PingboardApiClient.Models.Users.Responses
     public class User
     {
         [JsonProperty("id")]
-        public string? Id { get; set; }
+        public string Id { get; set; } = null!;
         
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
         
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
-        
+
         [JsonProperty("first_name")]
-        public string? FirstName { get; set; }
-        
+        public string FirstName { get; set; } = null!;
+
         [JsonProperty("last_name")]
-        public string? LastName { get; set; }
+        public string LastName { get; set; } = null!;
         
         [JsonProperty("nickname")]
         public string? NickName { get; set; }

@@ -16,5 +16,8 @@
     <Folder Include="Models\CustomFields\" />
     <Folder Include="Models\CustomFields\Requests\" />
     <Folder Include="Models\CustomFields\Responses\" />
+    <Folder Include="Models\Statuses\" />
+    <Folder Include="Models\Statuses\Requests\" />
+    <Folder Include="Models\Statuses\Responses\" />
   </ItemGroup>
 </Project>
