@@ -9,9 +9,6 @@ namespace PingboardApiClient.Models.Groups.Requests
     /// </summary>
     public class Group
     {
-        [JsonProperty("id")]
-        public string Id { get; set; } = null!;
-
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

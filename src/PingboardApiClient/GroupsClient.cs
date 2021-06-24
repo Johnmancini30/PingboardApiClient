@@ -65,7 +65,6 @@ namespace PingboardApiClient
             return await _httpFacade.UpdateAsync<Groups, UpdateGroupRequest>($"api/v2/groups/{id}", groupRequest);
         }
 
-
         /// <summary>
         /// Given an id, will delete the group matching it
         /// Requires company_admin access

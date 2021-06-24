@@ -8,10 +8,7 @@ namespace PingboardApiClient.Models.Users.Requests
     /// Represents a User object
     /// </summary>
     public class User
-    {
-        [JsonProperty("id")]
-        public string Id { get; set; } = null!;
-        
+    {        
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
         
