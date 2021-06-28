@@ -21,5 +21,8 @@
     <Folder Include="Models\Statuses\Responses\" />
     <Folder Include="Models\Company\" />
     <Folder Include="Models\Company\Responses\" />
+    <Folder Include="Models\Guests\" />
+    <Folder Include="Models\Guests\Requests\" />
+    <Folder Include="Models\Guests\Responses\" />
   </ItemGroup>
 </Project>

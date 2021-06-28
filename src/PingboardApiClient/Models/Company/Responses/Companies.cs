@@ -6,6 +6,6 @@ namespace PingboardApiClient.Models.Company.Responses
     public class Companies
     {
         [JsonProperty("companies")]
-        public List<Company>? CompaniesList { get; set; }
+        public List<Company>? CompanyList { get; set; }
     }
 }
