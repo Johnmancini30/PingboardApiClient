@@ -11,7 +11,7 @@ namespace PingboardApiClient.Internal.Http
 {
     internal class PingboardHttpFacade
     {
-        private static HttpClient DefaultClient = new HttpClient(new SocketsHttpHandler {PooledConnectionLifetime = TimeSpan.FromMinutes(10), PooledConnectionIdleTimeout = TimeSpan.FromMinutes(5), MaxConnectionsPerServer = 10});
+        private static HttpClient DefaultClient = new HttpClient(new SocketsHttpHandler { PooledConnectionLifetime = TimeSpan.FromMinutes(10), PooledConnectionIdleTimeout = TimeSpan.FromMinutes(5), MaxConnectionsPerServer = 10 });
         private readonly Uri _baseUri;
         private readonly string _clientId;
         private readonly string _clientSecret;
@@ -20,7 +20,7 @@ namespace PingboardApiClient.Internal.Http
 
         private AsyncRetryPolicy<HttpResponseMessage> PingboardPolicy = HttpPolicyExtensions
             .HandleTransientHttpError()
-            .WaitAndRetryAsync(new[] {TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(4), TimeSpan.FromSeconds(8)});
+            .WaitAndRetryAsync(new[] { TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(4), TimeSpan.FromSeconds(8) });
 
         internal PingboardHttpFacade(string baseUrl, string clientId, string clientSecret, HttpClient? client = null)
         {
@@ -82,7 +82,7 @@ namespace PingboardApiClient.Internal.Http
             await EnsureToken();
             var json = JsonConvert.SerializeObject(body);
             var data = new StringContent(json, System.Text.Encoding.Default, "application/json");
-            var request = new HttpRequestMessage {Method = new HttpMethod("PATCH"), RequestUri = uri, Content = data};
+            var request = new HttpRequestMessage { Method = new HttpMethod("PATCH"), RequestUri = uri, Content = data };
             var response = await PingboardPolicy.ExecuteAsync(async () => await _client.SendAsync(request));
             EnsureSuccess(response);
             var content = await response.Content.ReadAsStringAsync();
