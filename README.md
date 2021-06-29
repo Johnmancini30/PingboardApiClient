@@ -1,6 +1,6 @@
 ﻿# PingBoardApiClient
 
-PingboardApiClient is a client for [Pingboard Api version 4](https://pingboard.docs.apiary.io/) that targets .Net Core 5.0
+PingboardApiClient is a client for [Pingboard Api version 2](https://pingboard.docs.apiary.io/) that targets .Net Core 5.0
 
 ### Features
 * Authentication refresh is handled internally
@@ -10,7 +10,11 @@ PingboardApiClient is a client for [Pingboard Api version 4](https://pingboard.d
 ### How to use
 ```
 var optionalClient = new HttpClient();
-var pingboardClient = new PingboardClient("<base_url>", "<client_id>", "<client_secret>", optionalClient)
+var pingboardClient = new PingboardClient(
+                                "<base_url>", 
+                                "<client_id>", 
+                                "<client_secret>", 
+                                optionalClient);
 var users = await pingboardClient.Users.GetUsersAsync();
 ```
 ### Bugs or Features
