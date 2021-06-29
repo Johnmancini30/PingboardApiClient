@@ -38,7 +38,7 @@ namespace PingboardApiClient.Internal.Queries
             {
                 var array = _nameValues.AllKeys.SelectMany(
                         key => _nameValues.GetValues(key)
-                            ?.Select(value => $"{UrlEncode(key)}={UrlEncode(value)}")
+                            ?.Select(value => $"{UrlEncode(key ?? string.Empty)}={UrlEncode(value)}") ?? new string[0]
                     )
                     .ToArray();
                 return array.Any() ? "?" + string.Join("&", array) : string.Empty;
