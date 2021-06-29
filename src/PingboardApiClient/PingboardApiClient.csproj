@@ -3,6 +3,17 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp5.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <IsPackable>true</IsPackable>
+        <Copyright />
+        <Description>PingboardApiClient is a .NET core client for Pingboard API v2.</Description>
+        <Authors>John Mancini</Authors>
+        <PacakgeProjectUrl>https://github.com/Johnmancini30/PingboardApiClient</PacakgeProjectUrl>
+        <RepositoryUrl>https://github.com/Johnmancini30/PingboardApiClient</RepositoryUrl>
+        <PackageTags>Pingboard REST API CI CLIENT</PackageTags>
+        <PackageId>PingboardApiClient</PackageId>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <UseFullSemVerForNuGet>true</UseFullSemVerForNuGet>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />

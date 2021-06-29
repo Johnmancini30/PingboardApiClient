@@ -1,5 +1,6 @@
 ﻿# PingBoardApiClient
 [![Build](https://github.com/Johnmancini30/PingboardApiClient/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Johnmancini30/PingboardApiClient/actions/workflows/dotnet.yml)
+[![NuGet](https://img.shields.io/nuget/v/pingboardapiclient?color=g)](https://nuget.org/packages/PingboardApiClient)
 
 PingboardApiClient is a client for [Pingboard Api version 2](https://pingboard.docs.apiary.io/) that targets .Net Core 5.0
 
