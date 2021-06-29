@@ -1,4 +1,4 @@
-﻿# PingBoardApiClient
+﻿# PingboardApiClient
 [![Build](https://github.com/Johnmancini30/PingboardApiClient/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Johnmancini30/PingboardApiClient/actions/workflows/dotnet.yml)
 [![NuGet](https://img.shields.io/nuget/v/pingboardapiclient?color=g)](https://nuget.org/packages/PingboardApiClient)
 
