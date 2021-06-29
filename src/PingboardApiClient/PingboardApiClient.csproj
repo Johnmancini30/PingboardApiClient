@@ -24,5 +24,7 @@
     <Folder Include="Models\Guests\" />
     <Folder Include="Models\Guests\Requests\" />
     <Folder Include="Models\Guests\Responses\" />
+    <Folder Include="Models\LinkedAccounts\" />
+    <Folder Include="Models\LinkedAccounts\Responses\" />
   </ItemGroup>
 </Project>
