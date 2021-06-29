@@ -28,5 +28,7 @@
     <Folder Include="Models\LinkedAccounts\Responses\" />
     <Folder Include="Models\LinkedAccountProviders\" />
     <Folder Include="Models\LinkedAccountProviders\Responses\" />
+    <Folder Include="Models\StatusTypes\" />
+    <Folder Include="Models\StatusTypes\Responses\" />
   </ItemGroup>
 </Project>
